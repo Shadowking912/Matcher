@@ -267,7 +267,7 @@ def main_oss_ops(**kwargs):
         pred_masks.append(mask)
         pred_mask_lists.append(None)
 
-        print("no of images:",len(zip(data['query_imgs'], data['query_imgs_ori_size'])))
+        print("no of images:",len(list(zip(data['query_imgs'], data['query_imgs_ori_size']))))
         for query_img, query_img_ori_size in zip(data['query_imgs'], data['query_imgs_ori_size']):
             data['query_img'], data['query_img_ori_size'] = query_img[None, ...], query_img_ori_size
 
