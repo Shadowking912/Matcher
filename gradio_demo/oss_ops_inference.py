@@ -16,13 +16,14 @@ from segment_anything import SamPredictor, SamAutomaticMaskGenerator
 
 from gradio_demo.Matcher import Matcher
 from matcher.common import utils
-
+import sys
 import random
 random.seed(0)
 
 
 def default_argument_parser():
 
+    sys.argv=['']
     # Arguments parsing
     parser = argparse.ArgumentParser(description='Matcher Pytorch Implementation for One-shot Segmentation')
 
