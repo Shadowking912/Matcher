@@ -124,21 +124,20 @@ def preprocess_data(kwargs, args=None):
 
     support_img = Image.fromarray(kwargs.get("support_img"))
     query_img_1 = Image.fromarray(kwargs.get("query_img_1"))
-    query_img_2 = Image.fromarray(kwargs.get("query_img_2"))
 
     support_img_ori_size = (support_img.size[1], support_img.size[0]) # H, W
     query_img_1_ori_size = (query_img_1.size[1], query_img_1.size[0])
-    query_img_2_ori_size = (query_img_2.size[1], query_img_2.size[0])
+
 
 
     support_img = transform(support_img)
     query_img_1 = transform(query_img_1)
-    query_img_2 = transform(query_img_2)
+
 
     support_mask = torch.tensor(kwargs.get("support_mask"))
     support_mask = F.interpolate(support_mask.unsqueeze(0).float(), support_img.size()[-2:],
                                mode='nearest') > 0
-    query_imgs = torch.stack([query_img_1, query_img_2], dim=0)
+    query_imgs = torch.stack([query_img_1], dim=0)
 
     data = {
         "support_img": support_img[None, ...],
