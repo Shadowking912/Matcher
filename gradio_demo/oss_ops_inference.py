@@ -145,7 +145,7 @@ def preprocess_data(kwargs, args=None):
         "support_mask": support_mask,
         "query_imgs": query_imgs,
         "support_img_ori_size": support_img_ori_size,
-        "query_imgs_ori_size": (query_img_1_ori_size, query_img_2_ori_size),
+        "query_imgs_ori_size": (query_img_1_ori_size),
     }
 
     return data
