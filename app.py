@@ -59,5 +59,5 @@ if __name__ == '__main__':
     if not HF_TOKEN:
         show_warning(HF_TOKEN_NOT_SPECIFIED_WARNING)
 
-    demo.launch(enable_queue=False,inline=True)
+    demo.launch(enable_queue=False,inline=True,debug=True)
 
